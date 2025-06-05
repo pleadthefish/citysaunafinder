@@ -1,89 +1,412 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.5">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 21.6px Tahoma; color: #262626; -webkit-text-stroke: #262626}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p5 {margin: 0.0px 0.0px 24.0px 0.0px; text-align: center; font: 15.6px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 13.2px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #262626; -webkit-text-stroke: #000000; background-color: #ffffff; min-height: 15.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #262626; -webkit-text-stroke: #000000; background-color: #ffffff}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 11.0px '.SF NS'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 10.8px Tahoma; color: #535353; -webkit-text-stroke: #535353}
-    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 12.0px Tahoma; color: #c1c1c1; -webkit-text-stroke: #c1c1c1}
-    li.li2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Tahoma; color: #262626; -webkit-text-stroke: #262626}
-    li.li13 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Tahoma; color: #c1c1c1; -webkit-text-stroke: #c1c1c1}
-    span.s1 {font: 21.6px 'Apple Color Emoji'; font-kerning: none; background-color: rgba(255, 255, 255, 0.95)}
-    span.s2 {font-kerning: none; background-color: rgba(255, 255, 255, 0.95)}
-    span.s3 {background-color: rgba(255, 255, 255, 0.95); -webkit-text-stroke: 0px #000000}
-    span.s4 {font-kerning: none; text-shadow: 2.0px 2.0px 4.0px rgba(255, 255, 255, 0)}
-    span.s5 {font-kerning: none}
-    span.s6 {font: 12.0px Times; font-kerning: none}
-    span.s7 {font-kerning: none; background-color: #ffffff}
-    span.s8 {font: 12.0px Tahoma; font-kerning: none; color: #262626; background-color: #ffffff; -webkit-text-stroke: 0px #262626}
-    span.s9 {font-kerning: none; background-color: #f6f7f9}
-    span.s10 {font-kerning: none; background-color: #262626}
-    span.s11 {background-color: #262626; -webkit-text-stroke: 0px #000000}
-    ul.ul1 {list-style-type: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CitySaunaFinder - Find Your Perfect Sauna Experience</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tahoma', Arial, sans-serif;
+            line-height: 1.6;
+            color: #262626;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 21.6px;
+            font-weight: bold;
+            color: #262626;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo::before {
+            content: "🧖‍♀️";
+            font-size: 24px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #262626;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #fc5258;
+        }
+
+        .cta-button {
+            background: #fc5258;
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            color: white !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 0;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 15.6px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Search Section */
+        .search-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 800px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #262626;
+        }
+
+        .form-group select,
+        .form-group input {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: #fc5258;
+        }
+
+        .search-button {
+            background: #fc5258;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px auto 0;
+            display: block;
+        }
+
+        .search-button:hover {
+            background: #e04449;
+            transform: translateY(-2px);
+        }
+
+        .popular-tags {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .popular-tags span {
+            display: inline-block;
+            background: #f6f7f9;
+            padding: 8px 16px;
+            margin: 4px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 40px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(38, 38, 38, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            color: #fc5258;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #c1c1c1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #fc5258;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #c1c1c1;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .search-section {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .search-form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">🧖‍♀️</span><span class="s2"><b> CitySaunaFinder</b><b></b></span></p>
-<ul class="ul1">
-  <li class="li2"><span class="s3"></span><span class="s2">Home</span></li>
-  <li class="li2"><span class="s3"></span><span class="s2">Find Saunas</span></li>
-  <li class="li2"><span class="s3"></span><span class="s2">Cities</span></li>
-  <li class="li2"><span class="s3"></span><span class="s2">About</span></li>
-  <li class="li2"><span class="s3"></span><span class="s2">Contact</span></li>
-</ul>
-<p class="p3"><span class="s2"><b>List Your Sauna</b><b></b></span></p>
-<h1 style="margin: 0.0px 0.0px 12.0px 0.0px; text-align: center; font: 42.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff"><span class="s4"><b>Find Your Perfect Sauna Experience</b></span></h1>
-<p class="p5"><span class="s5">Discover the best saunas, infrared therapy centers, and wellness spas in your city</span></p>
-<p class="p6"><span class="s5"><b>Start Searching</b><b></b></span></p>
-<p class="p7"><span class="s5"></span><br></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s6">All Sauna Types</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s6">Infrared Sauna</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s6">Finnish Sauna</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s6">Steam Sauna</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s6">Dry Sauna</span></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">                    </span></span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s6">Any Price</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s6">Under $30</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s6">$30 - $60</span></p>
-<p class="p8"><span class="s5"><span class="Apple-converted-space">                        </span></span><span class="s6">$60+</span></p>
-<p class="p7"><span class="s5"><span class="Apple-converted-space">                    </span></span></p>
-<p class="p9"><span class="s7"><b>Search</b><b></b></span></p>
-<p class="p10"><span class="s8"><b>Popular: </b></span><span class="s9">Infrared Sauna</span><span class="s8"> </span><span class="s9">Finnish Sauna</span><span class="s8"> </span><span class="s9">Spa Sauna</span><span class="s8"> </span><span class="s9">Couples Sauna</span></p>
-<h2 style="margin: 0.0px 0.0px 36.0px 0.0px; text-align: center; font: 30.0px Tahoma; color: #262626; -webkit-text-stroke: #262626"><span class="s9"><b>Featured Saunas</b><b></b></span></h2>
-<h2 style="margin: 0.0px 0.0px 36.0px 0.0px; text-align: center; font: 30.0px Tahoma; color: #262626; -webkit-text-stroke: #262626"><span class="s7"><b>Popular Cities</b><b></b></span></h2>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 14.0px Tahoma; color: #fc5258; -webkit-text-stroke: #fc5258"><span class="s10"><b>CitySaunaFinder</b><b></b></span></h3>
-<p class="p3"><span class="s10">Your ultimate guide to finding the perfect sauna experience in your city.</span></p>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 14.0px Tahoma; color: #fc5258; -webkit-text-stroke: #fc5258"><span class="s10"><b>Quick Links</b><b></b></span></h3>
-<ul class="ul1">
-  <li class="li13"><span class="s11"></span><span class="s10">Find Saunas</span></li>
-  <li class="li13"><span class="s11"></span><span class="s10">Browse Cities</span></li>
-  <li class="li13"><span class="s11"></span><span class="s10">List Your Business</span></li>
-  <li class="li13"><span class="s11"></span><span class="s10">Sauna Reviews</span></li>
-</ul>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 14.0px Tahoma; color: #fc5258; -webkit-text-stroke: #fc5258"><span class="s10"><b>Sauna Types</b><b></b></span></h3>
-<ul class="ul1">
-  <li class="li13"><span class="s11"></span><span class="s10">Infrared Saunas</span></li>
-  <li class="li13"><span class="s11"></span><span class="s10">Finnish Saunas</span></li>
-  <li class="li13"><span class="s11"></span><span class="s10">Steam Saunas</span></li>
-  <li class="li13"><span class="s11"></span><span class="s10">Dry Saunas</span></li>
-</ul>
-<h3 style="margin: 0.0px 0.0px 12.0px 0.0px; font: 14.0px Tahoma; color: #fc5258; -webkit-text-stroke: #fc5258"><span class="s10"><b>Support</b><b></b></span></h3>
-<ul class="ul1">
-  <li class="li13"><span class="s11"></span><span class="s10">Help Center</span></li>
-  <li class="li13"><span class="s11"></span><span class="s10">Contact Us</span></li>
-  <li class="li13"><span class="s11"></span><span class="s10">Privacy Policy</span></li>
-  <li class="li13"><span class="s11"></span><span class="s10">Terms of Service</span></li>
-</ul>
-<p class="p14"><span class="s10">© 2025 CitySaunaFinder. All rights reserved.</span></p>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">CitySaunaFinder</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#find">Find Saunas</a></li>
+                        <li><a href="#cities">Cities</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <a href="#list" class="cta-button">List Your Sauna</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Find Your Perfect Sauna Experience</h1>
+            <p>Discover the best saunas, infrared therapy centers, and wellness spas in your city</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" placeholder="Enter city or zip code">
+                </div>
+                <div class="form-group">
+                    <label for="sauna-type">Sauna Type</label>
+                    <select id="sauna-type">
+                        <option value="">All Sauna Types</option>
+                        <option value="infrared">Infrared Sauna</option>
+                        <option value="finnish">Finnish Sauna</option>
+                        <option value="steam">Steam Sauna</option>
+                        <option value="dry">Dry Sauna</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price Range</label>
+                    <select id="price">
+                        <option value="">Any Price</option>
+                        <option value="under-30">Under $30</option>
+                        <option value="30-60">$30 - $60</option>
+                        <option value="60-plus">$60+</option>
+                    </select>
+                </div>
+            </form>
+            <button class="search-button">Search</button>
+            <div class="popular-tags">
+                <strong>Popular: </strong>
+                <span>Infrared Sauna</span>
+                <span>Finnish Sauna</span>
+                <span>Spa Sauna</span>
+                <span>Couples Sauna</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Saunas -->
+    <section class="section">
+        <div class="container">
+            <h2>Featured Saunas</h2>
+            <!-- Sauna cards would go here -->
+        </div>
+    </section>
+
+    <!-- Popular Cities -->
+    <section class="section">
+        <div class="container">
+            <h2>Popular Cities</h2>
+            <!-- City cards would go here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>CitySaunaFinder</h3>
+                    <p style="color: #c1c1c1;">Your ultimate guide to finding the perfect sauna experience in your city.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#find">Find Saunas</a></li>
+                        <li><a href="#cities">Browse Cities</a></li>
+                        <li><a href="#list">List Your Business</a></li>
+                        <li><a href="#reviews">Sauna Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Sauna Types</h3>
+                    <ul>
+                        <li><a href="#infrared">Infrared Saunas</a></li>
+                        <li><a href="#finnish">Finnish Saunas</a></li>
+                        <li><a href="#steam">Steam Saunas</a></li>
+                        <li><a href="#dry">Dry Saunas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 CitySaunaFinder. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple search functionality
+        document.querySelector('.search-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            const location = document.getElementById('location').value;
+            const saunaType = document.getElementById('sauna-type').value;
+            const price = document.getElementById('price').value;
+            
+            // Here you would typically send this data to your backend
+            console.log('Search params:', { location, saunaType, price });
+            alert('Search functionality would be implemented here!');
+        });
+    </script>
 </body>
 </html>
