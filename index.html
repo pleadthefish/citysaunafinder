@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CitySaunaFinder - Find Your Perfect Sauna Experience</title>
+    <title>Seattle Sauna Guide - Best Saunas in Seattle</title>
+    <meta name="description" content="Discover the best saunas in Seattle. From traditional Finnish saunas to modern infrared rooms, find your perfect sweat session in the Emerald City.">
     <style>
         * {
             margin: 0;
@@ -12,9 +13,9 @@
         }
 
         body {
-            font-family: 'Tahoma', Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #262626;
+            color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
@@ -25,387 +26,604 @@
             padding: 0 20px;
         }
 
-        /* Header */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 1rem 0;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .header-content {
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+            padding: 1rem 0;
         }
 
         .logo {
-            font-size: 21.6px;
+            font-size: 1.8rem;
             font-weight: bold;
-            color: #262626;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: #4a5568;
+            text-decoration: none;
         }
 
-        .logo::before {
-            content: "🧖‍♀️";
-            font-size: 24px;
-        }
-
-        nav ul {
+        .nav-links {
             display: flex;
             list-style: none;
-            gap: 30px;
-            flex-wrap: wrap;
+            gap: 2rem;
         }
 
-        nav a {
+        .nav-links a {
             text-decoration: none;
-            color: #262626;
+            color: #4a5568;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: #fc5258;
+        .nav-links a:hover {
+            color: #667eea;
         }
 
-        .cta-button {
-            background: #fc5258;
-            color: white !important;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            color: white !important;
-        }
-
-        /* Hero Section */
         .hero {
             text-align: center;
-            padding: 80px 0;
+            padding: 4rem 0;
             color: white;
         }
 
         .hero h1 {
-            font-size: 42px;
-            font-weight: bold;
-            margin-bottom: 20px;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 15.6px;
-            margin-bottom: 40px;
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
         }
 
-        /* Search Section */
-        .search-section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px auto;
-            max-width: 800px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-form {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group label {
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #262626;
-        }
-
-        .form-group select,
-        .form-group input {
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 14px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group select:focus,
-        .form-group input:focus {
-            outline: none;
-            border-color: #fc5258;
-        }
-
-        .search-button {
-            background: #fc5258;
+        .cta-button {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
             color: white;
-            border: none;
-            padding: 15px 40px;
-            border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
             transition: all 0.3s ease;
-            margin: 20px auto 0;
-            display: block;
+            backdrop-filter: blur(10px);
         }
 
-        .search-button:hover {
-            background: #e04449;
+        .cta-button:hover {
+            background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
         }
 
-        .popular-tags {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .popular-tags span {
-            display: inline-block;
-            background: #f6f7f9;
-            padding: 8px 16px;
-            margin: 4px;
+        .main-content {
+            background: white;
+            margin: 2rem 0;
             border-radius: 20px;
-            font-size: 12px;
-            color: #666;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
 
-        /* Sections */
-        .section {
-            padding: 60px 0;
-        }
-
-        .section h2 {
+        .search-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 3rem;
             text-align: center;
-            font-size: 30px;
-            margin-bottom: 40px;
             color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        /* Footer */
-        footer {
-            background: rgba(38, 38, 38, 0.95);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 60px 0 20px;
+        .search-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
-        .footer-content {
+        .search-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            min-width: 250px;
+        }
+
+        .search-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .search-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .filter-button {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-button:hover,
+        .filter-button.active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .neighborhoods-section {
+            padding: 3rem;
+        }
+
+        .neighborhoods-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #4a5568;
+        }
+
+        .neighborhoods-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .footer-section h3 {
-            color: #fc5258;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section ul li a {
-            color: #c1c1c1;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section ul li a:hover {
-            color: #fc5258;
-        }
-
-        .footer-bottom {
+        .neighborhood-card {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 2rem;
+            border-radius: 15px;
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            color: #c1c1c1;
-            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        /* Responsive */
+        .neighborhood-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: #667eea;
+        }
+
+        .neighborhood-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        .neighborhood-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .sauna-count {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .featured-section {
+            background: #f8f9fa;
+            padding: 3rem;
+        }
+
+        .featured-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #4a5568;
+        }
+
+        .sauna-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .sauna-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .sauna-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .sauna-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .sauna-info {
+            padding: 1.5rem;
+        }
+
+        .sauna-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #4a5568;
+        }
+
+        .sauna-type {
+            background: #667eea;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .sauna-details {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .rating {
+            color: #ffd700;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
+            .nav-links {
+                display: none;
             }
-
-            nav ul {
-                justify-content: center;
+            
+            .mobile-menu {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
             }
-
+            
             .hero h1 {
-                font-size: 28px;
+                font-size: 2.5rem;
             }
-
-            .search-section {
-                margin: 20px;
-                padding: 20px;
+            
+            .search-container {
+                flex-direction: column;
             }
-
-            .search-form {
+            
+            .search-input {
+                min-width: auto;
+            }
+            
+            .neighborhoods-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">CitySaunaFinder</div>
-                <nav>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#find">Find Saunas</a></li>
-                        <li><a href="#cities">Cities</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-                <a href="#list" class="cta-button">List Your Sauna</a>
-            </div>
-        </div>
+        <nav class="container">
+            <a href="/" class="logo">🧖‍♂️ Seattle Sauna Guide</a>
+            <ul class="nav-links">
+                <li><a href="#saunas">All Saunas</a></li>
+                <li><a href="#neighborhoods">Neighborhoods</a></li>
+                <li><a href="#types">Sauna Types</a></li>
+                <li><a href="#guides">Guides</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Find Your Perfect Sauna Experience</h1>
-            <p>Discover the best saunas, infrared therapy centers, and wellness spas in your city</p>
+            <h1>Seattle's Best Saunas</h1>
+            <p>Discover authentic Finnish saunas, modern infrared rooms, and relaxing steam baths across the Emerald City</p>
+            <a href="#saunas" class="cta-button">Find Your Perfect Sauna</a>
         </div>
     </section>
 
-    <!-- Search Section -->
-    <section class="search-section">
-        <div class="container">
-            <form class="search-form">
-                <div class="form-group">
-                    <label for="location">Location</label>
-                    <input type="text" id="location" placeholder="Enter city or zip code">
-                </div>
-                <div class="form-group">
-                    <label for="sauna-type">Sauna Type</label>
-                    <select id="sauna-type">
-                        <option value="">All Sauna Types</option>
-                        <option value="infrared">Infrared Sauna</option>
-                        <option value="finnish">Finnish Sauna</option>
-                        <option value="steam">Steam Sauna</option>
-                        <option value="dry">Dry Sauna</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="price">Price Range</label>
-                    <select id="price">
-                        <option value="">Any Price</option>
-                        <option value="under-30">Under $30</option>
-                        <option value="30-60">$30 - $60</option>
-                        <option value="60-plus">$60+</option>
-                    </select>
-                </div>
-            </form>
-            <button class="search-button">Search</button>
-            <div class="popular-tags">
-                <strong>Popular: </strong>
-                <span>Infrared Sauna</span>
-                <span>Finnish Sauna</span>
-                <span>Spa Sauna</span>
-                <span>Couples Sauna</span>
+    <main class="main-content">
+        <section class="search-section" id="saunas">
+            <h2>Find Saunas Near You</h2>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search by name, neighborhood, or sauna type...">
+                <button class="search-button">Search</button>
             </div>
-        </div>
-    </section>
+            <div class="filters">
+                <button class="filter-button active" data-filter="all">All Types</button>
+                <button class="filter-button" data-filter="finnish">Finnish/Wood-Fired</button>
+                <button class="filter-button" data-filter="infrared">Infrared</button>
+                <button class="filter-button" data-filter="korean">Korean Spa</button>
+                <button class="filter-button" data-filter="russian">Russian Banya</button>
+                <button class="filter-button" data-filter="gym">Gym/Chain</button>
+                <button class="filter-button" data-filter="hotel">Hotel Spa</button>
+            </div>
+        </section>
 
-    <!-- Featured Saunas -->
-    <section class="section">
-        <div class="container">
-            <h2>Featured Saunas</h2>
-            <!-- Sauna cards would go here -->
-        </div>
-    </section>
+        <section class="neighborhoods-section" id="neighborhoods">
+            <div class="container">
+                <h2>Browse by Neighborhood</h2>
+                <div class="neighborhoods-grid">
+                    <div class="neighborhood-card" data-neighborhood="capitol-hill">
+                        <h3>Capitol Hill</h3>
+                        <p>Trendy area with boutique wellness centers and spa facilities</p>
+                        <span class="sauna-count">4 saunas</span>
+                    </div>
+                    <div class="neighborhood-card" data-neighborhood="ballard">
+                        <h3>Ballard</h3>
+                        <p>Nordic heritage meets modern sauna culture</p>
+                        <span class="sauna-count">3 saunas</span>
+                    </div>
+                    <div class="neighborhood-card" data-neighborhood="fremont">
+                        <h3>Fremont</h3>
+                        <p>Quirky neighborhood with unique wellness spots</p>
+                        <span class="sauna-count">2 saunas</span>
+                    </div>
+                    <div class="neighborhood-card" data-neighborhood="south-lake-union">
+                        <h3>South Lake Union</h3>
+                        <p>High-end gyms and corporate wellness centers</p>
+                        <span class="sauna-count">5 saunas</span>
+                    </div>
+                    <div class="neighborhood-card" data-neighborhood="university-district">
+                        <h3>University District</h3>
+                        <p>Budget-friendly options and university facilities</p>
+                        <span class="sauna-count">3 saunas</span>
+                    </div>
+                    <div class="neighborhood-card" data-neighborhood="downtown">
+                        <h3>Downtown</h3>
+                        <p>Hotel spas and premium wellness centers</p>
+                        <span class="sauna-count">6 saunas</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Popular Cities -->
-    <section class="section">
-        <div class="container">
-            <h2>Popular Cities</h2>
-            <!-- City cards would go here -->
-        </div>
-    </section>
+        <section class="featured-section">
+            <div class="container">
+                <h2>Featured Saunas</h2>
+                <div class="sauna-grid">
+                    <div class="sauna-card" data-type="korean">
+                        <div class="sauna-image">🏢</div>
+                        <div class="sauna-info">
+                            <h3>Olympus Spa</h3>
+                            <span class="sauna-type">Korean Spa</span>
+                            <div class="sauna-details">
+                                <p><strong>Location:</strong> Lynnwood (women-only)</p>
+                                <p><strong>Features:</strong> Hydrotherapy pools, far infrared sauna, eucalyptus steam</p>
+                                <p><strong>Price:</strong> $53 day pass</p>
+                                <div class="rating">★★★★★ 4.5/5</div>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Footer -->
+                    <div class="sauna-card" data-type="russian">
+                        <div class="sauna-image">🔥</div>
+                        <div class="sauna-info">
+                            <h3>Banya 5</h3>
+                            <span class="sauna-type">Russian Banya</span>
+                            <div class="sauna-details">
+                                <p><strong>Location:</strong> South Lake Union</p>
+                                <p><strong>Features:</strong> Brick/wood sauna, hydrotherapy pools, eucalyptus steam</p>
+                                <p><strong>Price:</strong> Call for pricing</p>
+                                <div class="rating">★★★★☆ 4.2/5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sauna-card" data-type="infrared">
+                        <div class="sauna-image">☀️</div>
+                        <div class="sauna-info">
+                            <h3>City Sweats</h3>
+                            <span class="sauna-type">Infrared Sauna</span>
+                            <div class="sauna-details">
+                                <p><strong>Location:</strong> Seattle (first infrared sauna spa)</p>
+                                <p><strong>Features:</strong> Infrared therapy, cold plunge, contrast therapy</p>
+                                <p><strong>Price:</strong> Session-based pricing</p>
+                                <div class="rating">★★★★★ 4.7/5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sauna-card" data-type="spa">
+                        <div class="sauna-image">💎</div>
+                        <div class="sauna-info">
+                            <h3>Soak on the Sound</h3>
+                            <span class="sauna-type">Premium Spa</span>
+                            <div class="sauna-details">
+                                <p><strong>Location:</strong> Pacific Northwest</p>
+                                <p><strong>Features:</strong> Salt-water soaking, Finnish & infrared saunas, salt lounge</p>
+                                <p><strong>Price:</strong> Premium pricing</p>
+                                <div class="rating">★★★★★ 4.8/5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sauna-card" data-type="hotel">
+                        <div class="sauna-image">🏨</div>
+                        <div class="sauna-info">
+                            <h3>Four Seasons Seattle</h3>
+                            <span class="sauna-type">Hotel Spa</span>
+                            <div class="sauna-details">
+                                <p><strong>Location:</strong> Downtown Seattle</p>
+                                <p><strong>Features:</strong> Eucalyptus steam room, fitness facilities</p>
+                                <p><strong>Price:</strong> Guest/member access</p>
+                                <div class="rating">★★★★☆ 4.3/5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sauna-card" data-type="finnish">
+                        <div class="sauna-image">🔥</div>
+                        <div class="sauna-info">
+                            <h3>Fyre Sauna</h3>
+                            <span class="sauna-type">Wood-Fired Sauna</span>
+                            <div class="sauna-details">
+                                <p><strong>Location:</strong> Woodinville (Greater Seattle)</p>
+                                <p><strong>Features:</strong> Wood-fired sauna, outdoor cold plunges</p>
+                                <p><strong>Price:</strong> Reservation required</p>
+                                <div class="rating">★★★★★ 4.6/5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sauna-card" data-type="gym">
+                        <div class="sauna-image">💪</div>
+                        <div class="sauna-info">
+                            <h3>24 Hour Fitness Downtown</h3>
+                            <span class="sauna-type">Gym Sauna</span>
+                            <div class="sauna-details">
+                                <p><strong>Location:</strong> Downtown Seattle</p>
+                                <p><strong>Features:</strong> Steam room, sauna, fitness facilities</p>
+                                <p><strong>Price:</strong> Membership required</p>
+                                <div class="rating">★★★☆☆ 3.8/5</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sauna-card" data-type="private">
+                        <div class="sauna-image">🔒</div>
+                        <div class="sauna-info">
+                            <h3>Hothouse Spa & Sauna</h3>
+                            <span class="sauna-type">Private Rental</span>
+                            <div class="sauna-details">
+                                <p><strong>Location:</strong> Seattle</p>
+                                <p><strong>Features:</strong> Private rental only, gender inclusive</p>
+                                <p><strong>Price:</strong> By appointment</p>
+                                <div class="rating">★★★★☆ 4.1/5</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>CitySaunaFinder</h3>
-                    <p style="color: #c1c1c1;">Your ultimate guide to finding the perfect sauna experience in your city.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#find">Find Saunas</a></li>
-                        <li><a href="#cities">Browse Cities</a></li>
-                        <li><a href="#list">List Your Business</a></li>
-                        <li><a href="#reviews">Sauna Reviews</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Sauna Types</h3>
-                    <ul>
-                        <li><a href="#infrared">Infrared Saunas</a></li>
-                        <li><a href="#finnish">Finnish Saunas</a></li>
-                        <li><a href="#steam">Steam Saunas</a></li>
-                        <li><a href="#dry">Dry Saunas</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#help">Help Center</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 CitySaunaFinder. All rights reserved.</p>
-            </div>
+            <p>&copy; 2025 Seattle Sauna Guide. Helping Seattleites find their perfect sweat session.</p>
+            <p>Submit a sauna • Contact us • Privacy Policy</p>
         </div>
     </footer>
 
     <script>
-        // Simple search functionality
-        document.querySelector('.search-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            const location = document.getElementById('location').value;
-            const saunaType = document.getElementById('sauna-type').value;
-            const price = document.getElementById('price').value;
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        const filterButtons = document.querySelectorAll('.filter-button');
+        const saunaCards = document.querySelectorAll('.sauna-card');
+        const neighborhoodCards = document.querySelectorAll('.neighborhood-card');
+
+        // Filter functionality
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const filterType = button.getAttribute('data-filter');
+                
+                saunaCards.forEach(card => {
+                    if (filterType === 'all' || card.getAttribute('data-type') === filterType) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Neighborhood navigation
+        neighborhoodCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const neighborhood = card.getAttribute('data-neighborhood');
+                // This would navigate to a neighborhood-specific page
+                console.log(`Navigate to ${neighborhood} saunas`);
+            });
+        });
+
+        // Search functionality
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
             
-            // Here you would typically send this data to your backend
-            console.log('Search params:', { location, saunaType, price });
-            alert('Search functionality would be implemented here!');
+            saunaCards.forEach(card => {
+                const saunaName = card.querySelector('h3').textContent.toLowerCase();
+                const saunaType = card.querySelector('.sauna-type').textContent.toLowerCase();
+                const saunaDetails = card.querySelector('.sauna-details').textContent.toLowerCase();
+                
+                if (saunaName.includes(searchTerm) || 
+                    saunaType.includes(searchTerm) || 
+                    saunaDetails.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle (basic implementation)
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
     </script>
 </body>
