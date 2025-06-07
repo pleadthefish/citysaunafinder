@@ -72,20 +72,20 @@ const MapComponent = ({ saunas, onMarkerClick, selectedSaunaId }) => {
   }, [map, infoWindow, saunas, onMarkerClick]);
 
   // Get custom marker icons based on sauna type
-  const getMarkerIcon = (type) => {
-    const iconMap = {
-      'korean': 'data:image/svg+xml;base64,' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#ff6b6b" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="20">🏢</text></svg>`),
-      'russian': 'data:image/svg+xml;base64,' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#ff8c42" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="20">🔥</text></svg>`),
-      'infrared': 'data:image/svg+xml;base64,' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#ffd93d" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="20">☀️</text></svg>`),
-      'spa': 'data:image/svg+xml;base64=' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#6bcf7f" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="20">💎</text></svg>`),
-      'hotel': 'data:image/svg+xml;base64=' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#4ecdc4" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="20">🏨</text></svg>`),
-      'finnish': 'data:image/svg+xml;base64=' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#a8e6cf" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="20">🔥</text></svg>`),
-      'gym': 'data:image/svg+xml;base64=' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#845ec2" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="20">💪</text></svg>`),
-      'private': 'data:image/svg+xml;base64=' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#d65db1" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="20">🔒</text></svg>`)
-    };
-    
-    return iconMap[type] || iconMap['spa'];
+  // Get custom marker icons based on sauna type
+const getMarkerIcon = (type) => {
+  const iconMap = {
+    'korean': 'data:image/svg+xml;base64,' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#ff6b6b" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="16" font-weight="bold">K</text></svg>`),
+    'russian': 'data:image/svg+xml;base64,' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#ff8c42" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="16" font-weight="bold">R</text></svg>`),
+    'infrared': 'data:image/svg+xml;base64,' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#ffd93d" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="16" font-weight="bold">I</text></svg>`),
+    'spa': 'data:image/svg+xml;base64=' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#6bcf7f" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="16" font-weight="bold">S</text></svg>`),
+    'hotel': 'data:image/svg+xml;base64=' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#4ecdc4" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="16" font-weight="bold">H</text></svg>`),
+    'finnish': 'data:image/svg+xml;base64=' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#a8e6cf" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="16" font-weight="bold">F</text></svg>`),
+    'gym': 'data:image/svg+xml;base64=' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#845ec2" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="16" font-weight="bold">G</text></svg>`),
+    'private': 'data:image/svg+xml;base64=' + btoa(`<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="18" fill="#d65db1" stroke="white" stroke-width="3"/><text x="20" y="28" text-anchor="middle" fill="white" font-size="16" font-weight="bold">P</text></svg>`)
   };
+  return iconMap[type] || iconMap['spa'];
+};
 
   return <div ref={mapRef} style={{ width: '100%', height: '500px' }} />;
 };
