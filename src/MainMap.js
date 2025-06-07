@@ -1,5 +1,5 @@
 // MainMap.js
-import React, { useState } from 'react';
+import React from 'react';
 import { Wrapper, Status } from '@googlemaps/react-wrapper';
 
 const MapComponent = ({ saunas, onMarkerClick, selectedSaunaId }) => {
@@ -99,6 +99,8 @@ const MainMap = ({ saunas, onMarkerClick, selectedSaunaId }) => {
         return <div style={{ height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Error loading map</div>;
       case Status.SUCCESS:
         return <MapComponent saunas={saunas} onMarkerClick={onMarkerClick} selectedSaunaId={selectedSaunaId} />;
+      default:
+  return <div style={{ height: '500px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Loading...</div>;
     }
   };
 
