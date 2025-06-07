@@ -1,0 +1,795 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #3c2414;
+    background: linear-gradient(135deg, #d4a574 0%, #b8956a 50%, #8b6f47 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background: rgba(101, 67, 33, 0.95);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 20px rgba(60, 36, 20, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #d4a574;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f5f1eb;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #d4a574;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: #d4a574;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    color: #f5f1eb;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(212, 165, 116, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(139, 111, 71, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(60, 36, 20, 0.3);
+    font-weight: 300;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background: rgba(101, 67, 33, 0.8);
+    color: #f5f1eb;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 2px solid rgba(212, 165, 116, 0.3);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+    background: rgba(101, 67, 33, 0.9);
+    border-color: #d4a574;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(60, 36, 20, 0.2);
+}
+
+/* Main Content Container */
+.main-content {
+    background: #f5f1eb;
+    margin: 2rem 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(60, 36, 20, 0.15);
+    overflow: hidden;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+/* Search Section */
+.search-section {
+    background: linear-gradient(135deg, #8b6f47 0%, #654321 100%);
+    padding: 3rem;
+    text-align: center;
+    color: #f5f1eb;
+    position: relative;
+}
+
+.search-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="wood" patternUnits="userSpaceOnUse" width="10" height="10"><rect width="10" height="10" fill="%23654321"/><path d="M0,5 Q5,3 10,5" stroke="%238b6f47" stroke-width="0.5" fill="none" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23wood)"/></svg>') repeat;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.search-section-content {
+    position: relative;
+    z-index: 1;
+}
+
+.search-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+.search-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.search-input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 2px solid rgba(212, 165, 116, 0.3);
+    border-radius: 6px;
+    font-size: 1rem;
+    min-width: 250px;
+    background: rgba(245, 241, 235, 0.95);
+    color: #3c2414;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #d4a574;
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.2);
+}
+
+.search-input::placeholder {
+    color: #8b6f47;
+}
+
+.search-button {
+    background: rgba(212, 165, 116, 0.9);
+    color: #3c2414;
+    border: 2px solid rgba(212, 165, 116, 0.3);
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.search-button:hover {
+    background: #d4a574;
+    border-color: #d4a574;
+    transform: translateY(-1px);
+}
+
+/* View Toggle */
+.view-toggle {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.view-button {
+    background: rgba(245, 241, 235, 0.1);
+    color: #f5f1eb;
+    border: 2px solid rgba(245, 241, 235, 0.2);
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-button:hover,
+.view-button.active {
+    background: rgba(245, 241, 235, 0.2);
+    border-color: rgba(245, 241, 235, 0.4);
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.filter-button {
+    background: rgba(245, 241, 235, 0.1);
+    color: #f5f1eb;
+    border: 1px solid rgba(245, 241, 235, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    background: rgba(212, 165, 116, 0.8);
+    color: #3c2414;
+    border-color: #d4a574;
+}
+
+/* Content Views Container */
+.content-views {
+    position: relative;
+    min-height: 600px;
+}
+
+.content-view {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.content-view.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Map View Styles */
+.map-view {
+    height: 600px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 2rem;
+    box-shadow: inset 0 2px 10px rgba(60, 36, 20, 0.1);
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.map-controls {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(245, 241, 235, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(60, 36, 20, 0.1);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    z-index: 10;
+}
+
+.map-controls h4 {
+    color: #3c2414;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.map-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #3c2414;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    border: 1px solid rgba(60, 36, 20, 0.2);
+}
+
+.legend-color.traditional { background: #8b6f47; }
+.legend-color.infrared { background: #d4a574; }
+.legend-color.steam { background: #b8956a; }
+
+/* Map Info Panel */
+.map-info-panel {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background: rgba(245, 241, 235, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(60, 36, 20, 0.1);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+
+.map-info-panel.visible {
+    transform: translateY(0);
+}
+
+.info-panel-content h3 {
+    color: #3c2414;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.info-panel-content p {
+    color: #654321;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* List View - Neighborhoods Section */
+.neighborhoods-section {
+    padding: 3rem;
+    background: #f5f1eb;
+}
+
+.neighborhoods-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #3c2414;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+.neighborhoods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.neighborhood-card {
+    background: linear-gradient(135deg, #f5f1eb 0%, #ede5d8 100%);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(212, 165, 116, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.neighborhood-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.05) 0%, transparent 70%);
+    transform: translateX(-100%) translateY(-100%);
+    transition: transform 0.6s ease;
+}
+
+.neighborhood-card:hover::before {
+    transform: translateX(0) translateY(0);
+}
+
+.neighborhood-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(60, 36, 20, 0.15);
+    border-color: #d4a574;
+}
+
+.neighborhood-card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.neighborhood-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #3c2414;
+    font-weight: 500;
+}
+
+.neighborhood-card p {
+    color: #654321;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.sauna-count {
+    background: rgba(139, 111, 71, 0.8);
+    color: #f5f1eb;
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+/* Featured Saunas Section */
+.featured-section {
+    background: linear-gradient(135deg, #ede5d8 0%, #e6ddd0 100%);
+    padding: 3rem;
+    border-top: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.featured-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #3c2414;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+.sauna-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.sauna-card {
+    background: #f5f1eb;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(60, 36, 20, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.sauna-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(60, 36, 20, 0.15);
+    border-color: #d4a574;
+}
+
+.sauna-image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, #d4a574 0%, #b8956a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sauna-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="wood-grain" patternUnits="userSpaceOnUse" width="100" height="20"><rect width="100" height="20" fill="%23b8956a"/><path d="M0,10 Q25,5 50,10 T100,10" stroke="%23654321" stroke-width="0.5" fill="none" opacity="0.3"/><path d="M0,15 Q30,12 60,15 T100,15" stroke="%23654321" stroke-width="0.3" fill="none" opacity="0.2"/></pattern></defs><rect width="100" height="20" fill="url(%23wood-grain)"/></svg>') repeat;
+    opacity: 0.6;
+}
+
+.sauna-image-placeholder {
+    color: rgba(245, 241, 235, 0.8);
+    font-size: 2rem;
+    z-index: 1;
+    position: relative;
+}
+
+.sauna-info {
+    padding: 1.5rem;
+}
+
+.sauna-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #3c2414;
+    font-weight: 500;
+}
+
+.sauna-type {
+    background: #654321;
+    color: #f5f1eb;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.sauna-details {
+    color: #654321;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.sauna-amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.amenity-tag {
+    background: rgba(212, 165, 116, 0.2);
+    color: #654321;
+    padding: 0.2rem 0.6rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.stars {
+    color: #d4a574;
+    font-size: 1.1rem;
+}
+
+.rating-text {
+    color: #654321;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    background: #3c2414;
+    color: #f5f1eb;
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #d4a574;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f5f1eb;
+}
+
+/* Mobile Styles */
+.mobile-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: #f5f1eb;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .search-container {
+        flex-direction: column;
+    }
+    
+    .search-input {
+        min-width: auto;
+    }
+    
+    .view-toggle {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .neighborhoods-grid,
+    .sauna-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-controls {
+        position: static;
+        margin-bottom: 1rem;
+    }
+    
+    .map-view {
+        height: 400px;
+        margin: 1rem;
+    }
+    
+    .map-info-panel {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .search-section,
+    .neighborhoods-section,
+    .featured-section {
+        padding: 2rem 1rem;
+    }
+    
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .map-view {
+        height: 300px;
+        margin: 0.5rem;
+    }
+}
+
+/* Custom Map Marker Styles */
+.custom-marker {
+    background: #654321;
+    border: 3px solid #d4a574;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.custom-marker:hover {
+    transform: scale(1.2);
+    border-color: #f5f1eb;
+}
+
+.custom-marker.selected {
+    background: #d4a574;
+    transform: scale(1.3);
+}
+
+/* Map Info Window Styles */
+.map-info-window {
+    max-width: 250px;
+    padding: 1rem;
+    font-family: inherit;
+}
+
+.map-info-window h4 {
+    color: #3c2414;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.map-info-window p {
+    color: #654321;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.map-info-window .sauna-type {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+}

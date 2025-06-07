@@ -5,7 +5,7 @@ import SaunaCard from './SaunaCard.js';
 import MainMap from './MainMap.js';
 import SaunaDetail from './SaunaDetail.js';
 import saunas from './SaunaData.js';
-import './App.css'; // Import your CSS file
+import './styles/App.css'; // Import your CSS file
 
 // Main page component
 function HomePage() {
