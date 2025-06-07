@@ -121,6 +121,9 @@ const SaunaDetail = ({ saunas }) => {
         return <div style={{ height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Error loading map</div>;
       case Status.SUCCESS:
         return <SingleSaunaMap sauna={sauna} />;
+      default:
+    // Handle unexpected values or do nothing
+    break;
     }
   };
 
