@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CitySaunaFinder - Design Mockup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           NOVAIRE-INSPIRED DESIGN SYSTEM
+           ============================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Color Palette */
+            --primary-bg: #F8F6F4;
+            --card-bg: #FFFFFF;
+            --accent-warm: #C9A882;
+            --accent-dark: #5C4A3A;
+            --text-primary: #2C2420;
+            --text-secondary: #6B5D54;
+            --border-subtle: #E8E3DF;
+
+            /* Typography */
+            --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+
+            /* Spacing (generous NOVAIRE-style) */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 6rem;
+            --space-2xl: 8rem;
+
+            /* Layout */
+            --max-width: 1200px;
+            --border-radius: 2px;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+
+        .nav {
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border-subtle);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--space-md) var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-lg);
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+
+        .hero {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--space-2xl) var(--space-md) var(--space-xl);
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 300;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto var(--space-lg);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           SEARCH BAR
+           ============================================ */
+
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto var(--space-2xl);
+        }
+
+        .search-bar {
+            display: flex;
+            gap: var(--space-sm);
+            background: var(--card-bg);
+            padding: var(--space-xs);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--border-radius);
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: var(--space-sm) var(--space-md);
+            font-family: var(--font-primary);
+            font-size: 0.9375rem;
+            color: var(--text-primary);
+            background: transparent;
+        }
+
+        .search-input:focus {
+            outline: none;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .search-select {
+            padding: var(--space-sm) var(--space-md);
+            border: none;
+            background: transparent;
+            font-family: var(--font-primary);
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+        .search-select:focus {
+            outline: none;
+        }
+
+        .search-button {
+            padding: var(--space-sm) var(--space-lg);
+            background: var(--accent-dark);
+            color: var(--card-bg);
+            border: none;
+            font-family: var(--font-primary);
+            font-size: 0.9375rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            border-radius: var(--border-radius);
+        }
+
+        .search-button:hover {
+            background: var(--text-primary);
+        }
+
+        /* ============================================
+           SECTION HEADERS
+           ============================================ */
+
+        .section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md) var(--space-xl);
+        }
+
+        .section-header {
+            margin-bottom: var(--space-lg);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* ============================================
+           VENUE GRID (NOVAIRE-STYLE CARDS)
+           ============================================ */
+
+        .venue-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .venue-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .venue-card:hover {
+            border-color: var(--accent-warm);
+            box-shadow: 0 4px 24px rgba(44, 36, 32, 0.06);
+        }
+
+        .venue-image {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: linear-gradient(135deg, #E8E3DF 0%, #D4C4B0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 3rem;
+            opacity: 0.4;
+        }
+
+        .venue-content {
+            padding: var(--space-lg);
+        }
+
+        .venue-type {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .venue-name {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .venue-location {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+        }
+
+        .venue-description {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+        }
+
+        .venue-amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+
+        .amenity-tag {
+            font-size: 0.8125rem;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-bg);
+            color: var(--text-secondary);
+            border-radius: 2px;
+        }
+
+        .venue-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--space-md);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .venue-price {
+            font-family: var(--font-mono);
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .venue-link {
+            font-size: 0.875rem;
+            color: var(--accent-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .venue-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+
+        .footer {
+            background: var(--card-bg);
+            border-top: 1px solid var(--border-subtle);
+            margin-top: var(--space-2xl);
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: var(--space-lg);
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* ============================================
+           MOBILE RESPONSIVE
+           ============================================ */
+
+        @media (max-width: 768px) {
+            :root {
+                --space-lg: 2rem;
+                --space-xl: 3rem;
+                --space-2xl: 4rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .venue-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: var(--space-md);
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .venue-content {
+                padding: var(--space-md);
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">CitySaunaFinder</a>
+            <ul class="nav-links">
+                <li><a href="/cities">Browse Cities</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/list">List Your Sauna</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1 class="hero-title">Find authentic sauna experiences in your city</h1>
+        <p class="hero-subtitle">Discover traditional Finnish saunas, Korean jjimjilbangs, Russian banyas, and infrared studios across North America.</p>
+
+        <!-- SEARCH BAR -->
+        <div class="search-container">
+            <div class="search-bar">
+                <input
+                    type="text"
+                    class="search-input"
+                    placeholder="City or ZIP code"
+                >
+                <select class="search-select">
+                    <option value="all">All Types</option>
+                    <option value="finnish">Finnish</option>
+                    <option value="korean">Korean Spa</option>
+                    <option value="russian">Russian Banya</option>
+                    <option value="infrared">Infrared</option>
+                </select>
+                <button class="search-button">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED VENUES -->
+    <section class="section">
+        <div class="section-header">
+            <h2 class="section-title">Featured Saunas</h2>
+            <p class="section-subtitle">Curated sauna experiences worth traveling for</p>
+        </div>
+
+        <div class="venue-grid">
+            <!-- VENUE CARD 1 -->
+            <div class="venue-card">
+                <div class="venue-image">🧖</div>
+                <div class="venue-content">
+                    <div class="venue-type">Korean Spa</div>
+                    <h3 class="venue-name">Olympus Spa</h3>
+                    <div class="venue-location">Lynnwood, WA</div>
+                    <p class="venue-description">
+                        Traditional Korean spa featuring six different thermal rooms, hydrotherapy pools, and authentic healing experiences.
+                    </p>
+                    <div class="venue-amenities">
+                        <span class="amenity-tag">Hydrotherapy</span>
+                        <span class="amenity-tag">Far Infrared</span>
+                        <span class="amenity-tag">Steam Room</span>
+                    </div>
+                    <div class="venue-footer">
+                        <span class="venue-price">$53 day pass</span>
+                        <a href="#" class="venue-link">View Details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VENUE CARD 2 -->
+            <div class="venue-card">
+                <div class="venue-image">🔥</div>
+                <div class="venue-content">
+                    <div class="venue-type">Russian Banya</div>
+                    <h3 class="venue-name">Banya 5</h3>
+                    <div class="venue-location">Seattle, WA</div>
+                    <p class="venue-description">
+                        Authentic Russian banya experience with traditional platza treatments, brick sauna, and eucalyptus steam.
+                    </p>
+                    <div class="venue-amenities">
+                        <span class="amenity-tag">Platza</span>
+                        <span class="amenity-tag">Cold Plunge</span>
+                        <span class="amenity-tag">Eucalyptus</span>
+                    </div>
+                    <div class="venue-footer">
+                        <span class="venue-price">$$–$$$</span>
+                        <a href="#" class="venue-link">View Details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VENUE CARD 3 -->
+            <div class="venue-card">
+                <div class="venue-image">♨️</div>
+                <div class="venue-content">
+                    <div class="venue-type">Infrared Sauna</div>
+                    <h3 class="venue-name">City Sweats</h3>
+                    <div class="venue-location">Seattle, WA</div>
+                    <p class="venue-description">
+                        Modern infrared sauna studio specializing in contrast therapy with private rooms and cold plunge facilities.
+                    </p>
+                    <div class="venue-amenities">
+                        <span class="amenity-tag">Private Rooms</span>
+                        <span class="amenity-tag">Cold Plunge</span>
+                        <span class="amenity-tag">Contrast Therapy</span>
+                    </div>
+                    <div class="venue-footer">
+                        <span class="venue-price">Session-based</span>
+                        <a href="#" class="venue-link">View Details →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VENUE CARD 4 -->
+            <div class="venue-card">
+                <div class="venue-image">🌊</div>
+                <div class="venue-content">
+                    <div class="venue-type">Premium Spa</div>
+                    <h3 class="venue-name">Soak on the Sound</h3>
+                    <div class="venue-location">Seattle, WA</div>
+                    <p class="venue-description">
+                        Waterfront thermal spa featuring salt-water soaking pools, Finnish and infrared saunas, and panoramic sound views.
+                    </p>
+                    <div class="venue-amenities">
+                        <span class="amenity-tag">Salt Water</span>
+                        <span class="amenity-tag">Finnish Sauna</span>
+                        <span class="amenity-tag">Salt Lounge</span>
+                    </div>
+                    <div class="venue-footer">
+                        <span class="venue-price">$$$</span>
+                        <a href="#" class="venue-link">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-text">© 2024 CitySaunaFinder</div>
+            <ul class="footer-links">
+                <li><a href="/about">About</a></li>
+                <li><a href="/privacy">Privacy</a></li>
+                <li><a href="/terms">Terms</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* ============================================
+   CITYSAUNAFINDER V3 DESIGN SYSTEM
+   Coastal Finland + Wood Tones
+   Functional Minimalism with Warmth
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Palette: Coastal greens + Sauna woods */
+  --mist: #F4F5F3;
+  --birch: #FAFAF8;
+  --stone: #D5D8D3;
+  --moss: #A8AFA5;
+  --spruce: #6B7268;
+  --slate: #4A4F4C;
+  --charcoal: #2D2F2E;
+
+  /* Wood tones - warmth balance */
+  --cedar: #C9A882;
+  --pine: #D4B896;
+  --oak: #8B7355;
+  --wood-dark: #6B5D4F;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 3rem;
+  --space-xl: 5rem;
+
+  --max-width: 1200px;
+
+  /* Tailwind compatibility */
+  --background: var(--mist);
+  --foreground: var(--charcoal);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--mist);
+  color: var(--charcoal);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+}
+
+/* Typography helpers */
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), -apple-system, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), monospace;
+}

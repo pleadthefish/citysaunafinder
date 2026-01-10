@@ -1,0 +1,360 @@
+[
+  {
+    "id": "seattle-1",
+    "name": "Olympus Spa",
+    "slug": "olympus-spa",
+    "city": "Lynnwood",
+    "state": "WA",
+    "address": "2815 196th St SW, Lynnwood, WA 98036",
+    "zip": "98036",
+    "coordinates": {
+      "lat": 47.8278,
+      "lng": -122.3151
+    },
+    "neighborhood": "lynnwood",
+    "phone": null,
+    "website": null,
+    "email": null,
+    "saunaTypes": [
+      "korean"
+    ],
+    "category": "Korean Spa",
+    "amenities": [
+      "hydrotherapy",
+      "far-infrared",
+      "eucalyptus-steam"
+    ],
+    "priceRange": "$53 day pass",
+    "pricing": "$53 day pass",
+    "description": "Hydrotherapy pools, far infrared sauna, eucalyptus steam",
+    "hours": null,
+    "images": [],
+    "rating": 4.5,
+    "featured": true,
+    "verified": false,
+    "source": "manual-migration",
+    "dateAdded": "2025-11-13T02:30:00.391Z",
+    "lastUpdated": "2025-11-13T02:30:00.392Z"
+  },
+  {
+    "id": "seattle-2",
+    "name": "Banya 5",
+    "slug": "banya-5",
+    "city": "Seattle",
+    "state": "WA",
+    "address": "405 Dexter Ave N, Seattle, WA 98109",
+    "zip": "98109",
+    "coordinates": {
+      "lat": 47.626,
+      "lng": -122.337
+    },
+    "neighborhood": "south-lake-union",
+    "phone": null,
+    "website": null,
+    "email": null,
+    "saunaTypes": [
+      "russian"
+    ],
+    "category": "Russian Banya",
+    "amenities": [
+      "hydrotherapy",
+      "eucalyptus-steam"
+    ],
+    "priceRange": "Call for pricing",
+    "pricing": "Call for pricing",
+    "description": "Brick/wood sauna, hydrotherapy pools, eucalyptus steam",
+    "hours": null,
+    "images": [],
+    "rating": 4.2,
+    "featured": false,
+    "verified": false,
+    "source": "manual-migration",
+    "dateAdded": "2025-11-13T02:30:00.392Z",
+    "lastUpdated": "2025-11-13T02:30:00.392Z"
+  },
+  {
+    "id": "seattle-3",
+    "name": "City Sweats",
+    "slug": "city-sweats",
+    "city": "Seattle",
+    "state": "WA",
+    "address": "1516 12th Ave, Seattle, WA 98122",
+    "zip": "98122",
+    "coordinates": {
+      "lat": 47.6062,
+      "lng": -122.3321
+    },
+    "neighborhood": "seattle",
+    "phone": null,
+    "website": null,
+    "email": null,
+    "saunaTypes": [
+      "infrared"
+    ],
+    "category": "Infrared Sauna",
+    "amenities": [
+      "far-infrared",
+      "cold-plunge"
+    ],
+    "priceRange": "Session-based",
+    "pricing": "Session-based pricing",
+    "description": "Infrared therapy, cold plunge, contrast therapy",
+    "hours": null,
+    "images": [],
+    "rating": 4.7,
+    "featured": true,
+    "verified": false,
+    "source": "manual-migration",
+    "dateAdded": "2025-11-13T02:30:00.392Z",
+    "lastUpdated": "2025-11-13T02:30:00.392Z"
+  },
+  {
+    "id": "seattle-4",
+    "name": "Soak on the Sound",
+    "slug": "soak-on-the-sound",
+    "city": "Seattle",
+    "state": "WA",
+    "address": "Seattle, WA",
+    "zip": "",
+    "coordinates": {
+      "lat": 47.6034,
+      "lng": -122.33
+    },
+    "neighborhood": "pacific-northwest",
+    "phone": null,
+    "website": null,
+    "email": null,
+    "saunaTypes": [
+      "spa"
+    ],
+    "category": "Premium Spa",
+    "amenities": [
+      "far-infrared",
+      "salt-therapy"
+    ],
+    "priceRange": "$$$",
+    "pricing": "Premium pricing",
+    "description": "Salt-water soaking, Finnish & infrared saunas, salt lounge",
+    "hours": null,
+    "images": [],
+    "rating": 4.8,
+    "featured": true,
+    "verified": false,
+    "source": "manual-migration",
+    "dateAdded": "2025-11-13T02:30:00.392Z",
+    "lastUpdated": "2025-11-13T02:30:00.392Z"
+  },
+  {
+    "id": "seattle-5",
+    "name": "Four Seasons Seattle",
+    "slug": "four-seasons-seattle",
+    "city": "Seattle",
+    "state": "WA",
+    "address": "99 Union St, Seattle, WA 98101",
+    "zip": "98101",
+    "coordinates": {
+      "lat": 47.6089,
+      "lng": -122.3343
+    },
+    "neighborhood": "downtown",
+    "phone": null,
+    "website": null,
+    "email": null,
+    "saunaTypes": [
+      "hotel"
+    ],
+    "category": "Hotel Spa",
+    "amenities": [
+      "eucalyptus-steam",
+      "fitness-center"
+    ],
+    "priceRange": "Guest access",
+    "pricing": "Guest/member access",
+    "description": "Eucalyptus steam room, fitness facilities",
+    "hours": null,
+    "images": [],
+    "rating": 4.3,
+    "featured": false,
+    "verified": false,
+    "source": "manual-migration",
+    "dateAdded": "2025-11-13T02:30:00.392Z",
+    "lastUpdated": "2025-11-13T02:30:00.392Z"
+  },
+  {
+    "id": "seattle-6",
+    "name": "Fyre Sauna",
+    "slug": "fyre-sauna",
+    "city": "Seattle",
+    "state": "WA",
+    "address": "Woodinville, WA 98072",
+    "zip": "98072",
+    "coordinates": {
+      "lat": 47.754,
+      "lng": -122.154
+    },
+    "neighborhood": "woodinville",
+    "phone": null,
+    "website": null,
+    "email": null,
+    "saunaTypes": [
+      "finnish"
+    ],
+    "category": "Wood-Fired Sauna",
+    "amenities": [
+      "cold-plunge",
+      "wood-fired"
+    ],
+    "priceRange": "By reservation",
+    "pricing": "Reservation required",
+    "description": "Wood-fired sauna, outdoor cold plunges",
+    "hours": null,
+    "images": [],
+    "rating": 4.6,
+    "featured": true,
+    "verified": false,
+    "source": "manual-migration",
+    "dateAdded": "2025-11-13T02:30:00.392Z",
+    "lastUpdated": "2025-11-13T02:30:00.392Z"
+  },
+  {
+    "id": "seattle-7",
+    "name": "24 Hour Fitness Downtown",
+    "slug": "24-hour-fitness-downtown",
+    "city": "Seattle",
+    "state": "WA",
+    "address": "1827 Yale Ave, Seattle, WA 98101",
+    "zip": "98101",
+    "coordinates": {
+      "lat": 47.6097,
+      "lng": -122.3331
+    },
+    "neighborhood": "downtown",
+    "phone": null,
+    "website": null,
+    "email": null,
+    "saunaTypes": [
+      "gym"
+    ],
+    "category": "Gym Sauna",
+    "amenities": [
+      "fitness-center"
+    ],
+    "priceRange": "Membership required",
+    "pricing": "Membership required",
+    "description": "Steam room, sauna, fitness facilities",
+    "hours": null,
+    "images": [],
+    "rating": 3.8,
+    "featured": false,
+    "verified": false,
+    "source": "manual-migration",
+    "dateAdded": "2025-11-13T02:30:00.392Z",
+    "lastUpdated": "2025-11-13T02:30:00.392Z"
+  },
+  {
+    "id": "seattle-8",
+    "name": "Hothouse Spa & Sauna",
+    "slug": "hothouse-spa-sauna",
+    "city": "Seattle",
+    "state": "WA",
+    "address": "2328 1st Ave, Seattle, WA 98121",
+    "zip": "98121",
+    "coordinates": {
+      "lat": 47.6205,
+      "lng": -122.3493
+    },
+    "neighborhood": "seattle",
+    "phone": null,
+    "website": null,
+    "email": null,
+    "saunaTypes": [
+      "private"
+    ],
+    "category": "Private Rental",
+    "amenities": [
+      "private-rooms"
+    ],
+    "priceRange": "By reservation",
+    "pricing": "By appointment",
+    "description": "Private rental only, gender inclusive",
+    "hours": null,
+    "images": [],
+    "rating": 4.1,
+    "featured": false,
+    "verified": false,
+    "source": "manual-migration",
+    "dateAdded": "2025-11-13T02:30:00.392Z",
+    "lastUpdated": "2025-11-13T02:30:00.392Z"
+  },
+  {
+    "id": "seattle-9",
+    "name": "Seattle Bouldering Project - U District",
+    "slug": "seattle-bouldering-project-u-district",
+    "city": "Seattle",
+    "state": "WA",
+    "address": "4547 Brooklyn Ave NE, Seattle, WA 98105",
+    "zip": "98105",
+    "coordinates": {
+      "lat": 47.6587,
+      "lng": -122.3138
+    },
+    "neighborhood": "university-district",
+    "phone": null,
+    "website": null,
+    "email": null,
+    "saunaTypes": [
+      "gym"
+    ],
+    "category": "Climbing Gym",
+    "amenities": [
+      "far-infrared",
+      "fitness-center"
+    ],
+    "priceRange": "Membership required",
+    "pricing": "Membership required",
+    "description": "Infrared sauna in historic bank vault, bouldering, fitness",
+    "hours": null,
+    "images": [],
+    "rating": 4.4,
+    "featured": false,
+    "verified": false,
+    "source": "manual-migration",
+    "dateAdded": "2025-11-13T02:30:00.392Z",
+    "lastUpdated": "2025-11-13T02:30:00.392Z"
+  },
+  {
+    "id": "seattle-10",
+    "name": "Seattle Bouldering Project - Poplar",
+    "slug": "seattle-bouldering-project-poplar",
+    "city": "Seattle",
+    "state": "WA",
+    "address": "2750 Poplar Pl S, Seattle, WA 98144",
+    "zip": "98144",
+    "coordinates": {
+      "lat": 47.6348,
+      "lng": -122.3448
+    },
+    "neighborhood": "north-beacon-hill",
+    "phone": null,
+    "website": null,
+    "email": null,
+    "saunaTypes": [
+      "gym"
+    ],
+    "category": "Climbing Gym",
+    "amenities": [
+      "fitness-center"
+    ],
+    "priceRange": "Membership required",
+    "pricing": "Membership required",
+    "description": "Traditional saunas in locker rooms, bouldering, fitness",
+    "hours": null,
+    "images": [],
+    "rating": 4.4,
+    "featured": false,
+    "verified": false,
+    "source": "manual-migration",
+    "dateAdded": "2025-11-13T02:30:00.392Z",
+    "lastUpdated": "2025-11-13T02:30:00.392Z"
+  }
+]

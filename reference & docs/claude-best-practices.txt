@@ -1,0 +1,431 @@
+CITYSAUNAFINDER.COM - CLAUDE CODE TRAINING GUIDE
+Based on Reddit Post: "Claude Code is a Beast - Tips from 6 Months of Hardcore Use"
+================================================
+
+## WHAT YOU CAN STEAL IMMEDIATELY
+
+### 1. CLAUDE.md File (Your Project Constitution)
+
+Create `/citysaunafinder/CLAUDE.md`:
+
+```markdown
+# CitySaunaFinder - Project Guidelines
+
+## Brand Voice
+- Write like you actually use saunas
+- NO: "nestled", "boasts", "perfect", "ultimate", "curated"
+- YES: Specific details, opinions, irreverence, authenticity
+- Example tone: "The löyly here is weak and the regulars know it"
+
+## Design Principles
+- Scandinavian minimalism meets editorial design
+- Color palette: Cedar (#D4A574), Steam (#F5F5F5), Stone (#3A3A3A)
+- Typography: Inter for UI, Crimson Text for editorial
+- NO rounded corners everywhere, NO gradient buttons
+
+## Content Standards
+Every venue listing MUST include:
+- Sauna type (traditional/infrared/Russian banya/etc.)
+- Temperature range
+- Clothing policy
+- One sensory detail (smell of cedar, sound of aufguss, etc.)
+- One opinion or cultural context
+
+## File Structure
+/data - Venue data (JSON)
+/content - Blog posts & city pages
+/components - React components
+/styles - CSS modules
+```
+
+### 2. Skills System (For This Project)
+
+Create custom instructions/project context:
+
+**Skill: "sauna-content-writer"**
+
+```markdown
+# Sauna Content Writing Standards
+
+## Voice Examples
+BAD: "This spa offers a luxurious sauna experience"
+GOOD: "The Finnish sauna runs at 185°F and the owner will judge you if you don't know how to make proper löyly"
+
+## Required Elements
+- Cultural authenticity markers
+- Specific temperatures, materials, rituals
+- Who actually goes there (locals vs tourists)
+- What makes it weird/special/authentic
+
+## Forbidden Phrases
+[List all AI-sounding phrases to avoid]
+```
+
+**Skill: "citysauna-design"**
+
+```markdown
+# Design System
+
+## Typography
+- Headlines: Crimson Text, 600 weight
+- Body: Inter, 400 weight
+- Never use default system fonts
+
+## Layout Patterns
+- Card-based venue listings
+- Full-bleed hero images
+- Generous whitespace (2-3x what feels right)
+
+## Reference Sites
+[Include 3-5 screenshots or links to sites you want to emulate]
+```
+
+## LEARNING PATH (PRIORITIZED)
+
+### Week 1: Foundation
+1. Read the full DEV.to post (✓ Done)
+2. Create basic CLAUDE.md for your project
+3. Write ONE sauna description yourself as the gold standard
+4. Create one "skill" with your brand voice guidelines
+
+### Week 2: Implementation
+1. Use your CLAUDE.md + skill in every prompt
+2. When Claude produces AI slop, immediately correct: 
+   "This is too generic. Rewrite using the voice guidelines in sauna-content-writer skill"
+3. Add successful examples to your skill file
+4. Start building consistency
+
+### Week 3+: Advanced (If Needed)
+- Custom hooks (probably overkill for your project size)
+- Subagents for specific tasks (venue scraper, content reviewer)
+- Scripts for data collection automation
+
+## KEY TAKEAWAYS FOR YOUR PROJECT
+
+From that post, these principles matter most:
+
+1. **"Ask not what Claude can do for you, ask what context you can give to Claude"**
+   - Your CLAUDE.md is the single most important file
+
+2. **Planning is King**
+   - Always plan before building
+   - Create written plans you can review
+
+3. **Iterative Refinement**
+   - First output will be mediocre
+   - Show Claude YOUR rewrite
+   - "Match THIS tone exactly"
+
+4. **Documentation as Training**
+   - Every good example you create teaches Claude
+   - Save successful outputs as reference
+
+## IMMEDIATE ACTION ITEMS
+
+Before your next Claude Code session:
+
+1. Create CLAUDE.md with brand voice + design guidelines
+2. Write 3 example sauna descriptions yourself
+3. Add them to the CLAUDE.md as "gold standard examples"
+4. Start every prompt with: "Follow CLAUDE.md guidelines exactly"
+
+**The difference**: 
+Going from "make me a sauna website" 
+to "make me a sauna website following the voice, design, and content standards in CLAUDE.md" 
+is night and day.
+
+## KEY INSIGHTS FROM REDDIT POST
+
+### Skills Auto-Activation System
+- The author created TypeScript hooks that automatically load relevant skills
+- Skills contain best practices (500 lines max)
+- Hooks check for keywords/file patterns and inject skill references before Claude sees your prompt
+- Result: Consistent output without manually reminding Claude every time
+
+### Dev Docs System (Task Management)
+For every large task, create three files:
+1. `[task-name]-plan.md` - The accepted plan
+2. `[task-name]-context.md` - Key files, decisions
+3. `[task-name]-tasks.md` - Checklist of work
+
+This prevents Claude from "losing the plot" during long sessions.
+
+### Planning Process
+- ALWAYS use planning mode first
+- Review the plan thoroughly before accepting
+- Catch mistakes/misunderstandings early
+- Create dev docs immediately after planning
+
+### Hooks System Benefits
+- Auto-format code with Prettier after edits
+- Run build checks after Claude responds
+- Catch TypeScript errors immediately
+- Gentle reminders for error handling
+
+### Quality Tips
+- Have Claude review its own code
+- Use specialized subagents for specific tasks
+- Create slash commands for repeated workflows
+- Document everything as you go
+
+### Prompt Engineering
+- Be as specific as possible
+- Don't lead with your opinions if you want honest feedback
+- If unsure, ask Claude to research and present options
+- Include context about what you DON'T want
+
+## PROMPT IMPROVEMENT FORMULA
+
+### Bad Prompt:
+"Write about saunas in Austin"
+
+### Good Prompt:
+"Write like Anthony Bourdain covering saunas. Conversational, opinionated, 
+irreverent but knowledgeable. No marketing speak. No "nestled in" or 
+"boasts" or "perfect for." Short sentences. Specific details over generalities.
+
+Talk about: weird regulars, the exact smell of cedar, whether the löyly 
+is authentic or sad, if tourists ruin it. 
+
+Example tone: "The Russian lady who runs this place will judge your 
+towel etiquette and you'll deserve it."
+
+Now write about [specific sauna]."
+
+## RESOURCES
+
+- Original Reddit Post: https://www.reddit.com/r/ClaudeAI/comments/1oivjvm/claude_code_is_a_beast_tips_from_6_months_of/
+- DEV.to Full Article: https://dev.to/diet-code103/claude-code-is-a-beast-tips-from-6-months-of-hardcore-use-572n
+- Example Skills Repo: https://github.com/diet103/claude-code-infrastructure-showcase
+- Claude Code Docs: https://docs.claude.com/en/docs/claude-code
+
+## NEXT SESSION CHECKLIST
+
+□ Create CLAUDE.md file in project root
+□ Write 3 gold-standard sauna descriptions yourself
+□ Create sauna-content-writer skill with voice guidelines
+□ Create citysauna-design skill with design system
+□ Add forbidden AI phrases list
+□ Include 3-5 reference design sites
+□ Test with one venue description
+□ Iterate and refine based on output
+
+================================================
+Date Created: November 3, 2025
+For: CitySaunaFinder.com Revamp Project
+================================================CITYSAUNAFINDER.COM - CLAUDE CODE TRAINING GUIDE
+Based on Reddit Post: "Claude Code is a Beast - Tips from 6 Months of Hardcore Use"
+================================================
+
+## WHAT YOU CAN STEAL IMMEDIATELY
+
+### 1. CLAUDE.md File (Your Project Constitution)
+
+Create `/citysaunafinder/CLAUDE.md`:
+
+```markdown
+# CitySaunaFinder - Project Guidelines
+
+## Brand Voice
+- Write like you actually use saunas
+- NO: "nestled", "boasts", "perfect", "ultimate", "curated"
+- YES: Specific details, opinions, irreverence, authenticity
+- Example tone: "The löyly here is weak and the regulars know it"
+
+## Design Principles
+- Scandinavian minimalism meets editorial design
+- Color palette: Cedar (#D4A574), Steam (#F5F5F5), Stone (#3A3A3A)
+- Typography: Inter for UI, Crimson Text for editorial
+- NO rounded corners everywhere, NO gradient buttons
+
+## Content Standards
+Every venue listing MUST include:
+- Sauna type (traditional/infrared/Russian banya/etc.)
+- Temperature range
+- Clothing policy
+- One sensory detail (smell of cedar, sound of aufguss, etc.)
+- One opinion or cultural context
+
+## File Structure
+/data - Venue data (JSON)
+/content - Blog posts & city pages
+/components - React components
+/styles - CSS modules
+```
+
+### 2. Skills System (For This Project)
+
+Create custom instructions/project context:
+
+**Skill: "sauna-content-writer"**
+
+```markdown
+# Sauna Content Writing Standards
+
+## Voice Examples
+BAD: "This spa offers a luxurious sauna experience"
+GOOD: "The Finnish sauna runs at 185°F and the owner will judge you if you don't know how to make proper löyly"
+
+## Required Elements
+- Cultural authenticity markers
+- Specific temperatures, materials, rituals
+- Who actually goes there (locals vs tourists)
+- What makes it weird/special/authentic
+
+## Forbidden Phrases
+[List all AI-sounding phrases to avoid]
+```
+
+**Skill: "citysauna-design"**
+
+```markdown
+# Design System
+
+## Typography
+- Headlines: Crimson Text, 600 weight
+- Body: Inter, 400 weight
+- Never use default system fonts
+
+## Layout Patterns
+- Card-based venue listings
+- Full-bleed hero images
+- Generous whitespace (2-3x what feels right)
+
+## Reference Sites
+[Include 3-5 screenshots or links to sites you want to emulate]
+```
+
+## LEARNING PATH (PRIORITIZED)
+
+### Week 1: Foundation
+1. Read the full DEV.to post (✓ Done)
+2. Create basic CLAUDE.md for your project
+3. Write ONE sauna description yourself as the gold standard
+4. Create one "skill" with your brand voice guidelines
+
+### Week 2: Implementation
+1. Use your CLAUDE.md + skill in every prompt
+2. When Claude produces AI slop, immediately correct: 
+   "This is too generic. Rewrite using the voice guidelines in sauna-content-writer skill"
+3. Add successful examples to your skill file
+4. Start building consistency
+
+### Week 3+: Advanced (If Needed)
+- Custom hooks (probably overkill for your project size)
+- Subagents for specific tasks (venue scraper, content reviewer)
+- Scripts for data collection automation
+
+## KEY TAKEAWAYS FOR YOUR PROJECT
+
+From that post, these principles matter most:
+
+1. **"Ask not what Claude can do for you, ask what context you can give to Claude"**
+   - Your CLAUDE.md is the single most important file
+
+2. **Planning is King**
+   - Always plan before building
+   - Create written plans you can review
+
+3. **Iterative Refinement**
+   - First output will be mediocre
+   - Show Claude YOUR rewrite
+   - "Match THIS tone exactly"
+
+4. **Documentation as Training**
+   - Every good example you create teaches Claude
+   - Save successful outputs as reference
+
+## IMMEDIATE ACTION ITEMS
+
+Before your next Claude Code session:
+
+1. Create CLAUDE.md with brand voice + design guidelines
+2. Write 3 example sauna descriptions yourself
+3. Add them to the CLAUDE.md as "gold standard examples"
+4. Start every prompt with: "Follow CLAUDE.md guidelines exactly"
+
+**The difference**: 
+Going from "make me a sauna website" 
+to "make me a sauna website following the voice, design, and content standards in CLAUDE.md" 
+is night and day.
+
+## KEY INSIGHTS FROM REDDIT POST
+
+### Skills Auto-Activation System
+- The author created TypeScript hooks that automatically load relevant skills
+- Skills contain best practices (500 lines max)
+- Hooks check for keywords/file patterns and inject skill references before Claude sees your prompt
+- Result: Consistent output without manually reminding Claude every time
+
+### Dev Docs System (Task Management)
+For every large task, create three files:
+1. `[task-name]-plan.md` - The accepted plan
+2. `[task-name]-context.md` - Key files, decisions
+3. `[task-name]-tasks.md` - Checklist of work
+
+This prevents Claude from "losing the plot" during long sessions.
+
+### Planning Process
+- ALWAYS use planning mode first
+- Review the plan thoroughly before accepting
+- Catch mistakes/misunderstandings early
+- Create dev docs immediately after planning
+
+### Hooks System Benefits
+- Auto-format code with Prettier after edits
+- Run build checks after Claude responds
+- Catch TypeScript errors immediately
+- Gentle reminders for error handling
+
+### Quality Tips
+- Have Claude review its own code
+- Use specialized subagents for specific tasks
+- Create slash commands for repeated workflows
+- Document everything as you go
+
+### Prompt Engineering
+- Be as specific as possible
+- Don't lead with your opinions if you want honest feedback
+- If unsure, ask Claude to research and present options
+- Include context about what you DON'T want
+
+## PROMPT IMPROVEMENT FORMULA
+
+### Bad Prompt:
+"Write about saunas in Austin"
+
+### Good Prompt:
+"Write like Anthony Bourdain covering saunas. Conversational, opinionated, 
+irreverent but knowledgeable. No marketing speak. No "nestled in" or 
+"boasts" or "perfect for." Short sentences. Specific details over generalities.
+
+Talk about: weird regulars, the exact smell of cedar, whether the löyly 
+is authentic or sad, if tourists ruin it. 
+
+Example tone: "The Russian lady who runs this place will judge your 
+towel etiquette and you'll deserve it."
+
+Now write about [specific sauna]."
+
+## RESOURCES
+
+- Original Reddit Post: https://www.reddit.com/r/ClaudeAI/comments/1oivjvm/claude_code_is_a_beast_tips_from_6_months_of/
+- DEV.to Full Article: https://dev.to/diet-code103/claude-code-is-a-beast-tips-from-6-months-of-hardcore-use-572n
+- Example Skills Repo: https://github.com/diet103/claude-code-infrastructure-showcase
+- Claude Code Docs: https://docs.claude.com/en/docs/claude-code
+
+## NEXT SESSION CHECKLIST
+
+□ Create CLAUDE.md file in project root
+□ Write 3 gold-standard sauna descriptions yourself
+□ Create sauna-content-writer skill with voice guidelines
+□ Create citysauna-design skill with design system
+□ Add forbidden AI phrases list
+□ Include 3-5 reference design sites
+□ Test with one venue description
+□ Iterate and refine based on output
+
+================================================
+Date Created: November 3, 2025
+For: CitySaunaFinder.com Revamp Project
+================================================

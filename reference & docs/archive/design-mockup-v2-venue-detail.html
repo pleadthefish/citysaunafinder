@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympus Spa - CitySaunaFinder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Cormorant:wght@300;400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           COASTAL FINLAND / PACIFIC NORTHWEST
+           Seductive Minimalism - Detail Page
+           ============================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --mist: #F4F5F3;
+            --fog: #E8EBE7;
+            --stone: #D5D8D3;
+            --moss: #A8AFA5;
+            --spruce: #6B7268;
+            --slate: #4A4F4C;
+            --charcoal: #2D2F2E;
+            --birch: #FAFAF8;
+            --rain: #C4C9C3;
+            --warmth: #B8A090;
+
+            --font-serif: 'Cormorant', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 6rem;
+            --space-2xl: 10rem;
+
+            --max-width: 1100px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--mist);
+            color: var(--charcoal);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 300;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+
+        .nav {
+            background: rgba(250, 250, 248, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--fog);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-serif);
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-lg);
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--spruce);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--charcoal);
+        }
+
+        /* ============================================
+           BREADCRUMB
+           ============================================ */
+
+        .breadcrumb {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--space-md) var(--space-lg) 0;
+        }
+
+        .breadcrumb-list {
+            display: flex;
+            gap: var(--space-sm);
+            list-style: none;
+            font-size: 0.8125rem;
+            color: var(--moss);
+            letter-spacing: 0.02em;
+        }
+
+        .breadcrumb-list a {
+            color: var(--moss);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-list a:hover {
+            color: var(--charcoal);
+        }
+
+        .breadcrumb-separator {
+            color: var(--stone);
+        }
+
+        /* ============================================
+           HERO HEADER - Avant-garde editorial
+           ============================================ */
+
+        .venue-hero {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-lg);
+            border-bottom: 1px solid var(--fog);
+        }
+
+        .venue-category {
+            font-family: var(--font-mono);
+            font-size: 0.6875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--moss);
+            margin-bottom: var(--space-md);
+        }
+
+        .venue-title {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-lg);
+            color: var(--charcoal);
+            line-height: 1.1;
+        }
+
+        .venue-intro {
+            font-size: 1.125rem;
+            color: var(--spruce);
+            line-height: 1.8;
+            max-width: 650px;
+            margin-bottom: var(--space-lg);
+            font-weight: 300;
+        }
+
+        .venue-meta {
+            display: flex;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+            font-family: var(--font-mono);
+            font-size: 0.8125rem;
+            color: var(--moss);
+            letter-spacing: 0.02em;
+        }
+
+        .venue-meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        /* ============================================
+           IMAGE GALLERY - Full bleed, editorial
+           ============================================ */
+
+        .image-section {
+            background: var(--birch);
+            padding: var(--space-xl) 0;
+            margin: var(--space-xl) 0;
+        }
+
+        .image-gallery {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1px;
+            background: var(--fog);
+        }
+
+        .gallery-main {
+            aspect-ratio: 16 / 10;
+            background: linear-gradient(135deg, #E8EBE7 0%, #D5D8D3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--moss);
+            font-size: 5rem;
+            opacity: 0.3;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--fog);
+        }
+
+        .gallery-thumb {
+            aspect-ratio: 4 / 3;
+            background: linear-gradient(135deg, #D5D8D3 0%, #C4C9C3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--moss);
+            font-size: 2.5rem;
+            opacity: 0.3;
+        }
+
+        /* ============================================
+           CONTENT LAYOUT - Asymmetric, editorial
+           ============================================ */
+
+        .venue-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-lg);
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: var(--space-xl);
+        }
+
+        .content-main {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+
+        .content-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        /* ============================================
+           CONTENT SECTIONS
+           ============================================ */
+
+        .content-block {
+            padding-bottom: var(--space-xl);
+            border-bottom: 1px solid var(--fog);
+        }
+
+        .content-block:last-child {
+            border-bottom: none;
+        }
+
+        .content-block h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+            margin-bottom: var(--space-lg);
+            color: var(--slate);
+        }
+
+        .content-block h3 {
+            font-family: var(--font-serif);
+            font-size: 1.375rem;
+            font-weight: 400;
+            margin-bottom: var(--space-sm);
+            margin-top: var(--space-lg);
+            color: var(--charcoal);
+        }
+
+        .content-block p {
+            font-size: 0.9375rem;
+            color: var(--spruce);
+            line-height: 1.8;
+            margin-bottom: var(--space-md);
+        }
+
+        .content-block ul {
+            list-style: none;
+            padding: 0;
+            margin-top: var(--space-md);
+        }
+
+        .content-block li {
+            font-size: 0.9375rem;
+            color: var(--spruce);
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--fog);
+            line-height: 1.8;
+        }
+
+        .content-block li:last-child {
+            border-bottom: none;
+        }
+
+        /* ============================================
+           AMENITIES - Minimal grid
+           ============================================ */
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .amenity-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            padding: var(--space-md);
+            background: var(--birch);
+            border: 1px solid var(--fog);
+        }
+
+        .amenity-label {
+            font-size: 0.8125rem;
+            color: var(--charcoal);
+            letter-spacing: 0.02em;
+        }
+
+        .amenity-desc {
+            font-size: 0.75rem;
+            color: var(--moss);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           SIDEBAR - Sticky info card
+           ============================================ */
+
+        .info-card {
+            background: var(--birch);
+            border: 1px solid var(--fog);
+            padding: var(--space-lg);
+            position: sticky;
+            top: calc(var(--space-xl) + 60px);
+        }
+
+        .info-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: var(--space-md);
+            color: var(--charcoal);
+        }
+
+        .info-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--fog);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-size: 0.75rem;
+            color: var(--moss);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .info-value {
+            color: var(--charcoal);
+            font-size: 0.9375rem;
+        }
+
+        .info-value a {
+            color: var(--slate);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-value a:hover {
+            color: var(--charcoal);
+        }
+
+        /* ============================================
+           CTA BUTTONS
+           ============================================ */
+
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            margin-top: var(--space-md);
+            background: var(--fog);
+        }
+
+        .btn {
+            padding: var(--space-md);
+            font-family: var(--font-sans);
+            font-size: 0.875rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--slate);
+            color: var(--birch);
+        }
+
+        .btn-primary:hover {
+            background: var(--charcoal);
+        }
+
+        .btn-secondary {
+            background: var(--birch);
+            color: var(--slate);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+        }
+
+        /* ============================================
+           MAP
+           ============================================ */
+
+        .map-container {
+            height: 300px;
+            background: linear-gradient(135deg, #E8EBE7 0%, #D5D8D3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--moss);
+            font-size: 0.875rem;
+            border: 1px solid var(--fog);
+            margin-top: var(--space-md);
+        }
+
+        /* ============================================
+           MOBILE RESPONSIVE
+           ============================================ */
+
+        @media (max-width: 968px) {
+            :root {
+                --space-lg: 2.5rem;
+                --space-xl: 4rem;
+                --space-2xl: 6rem;
+            }
+
+            .nav-container {
+                padding: var(--space-md);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .breadcrumb {
+                padding: var(--space-md) var(--space-md) 0;
+            }
+
+            .venue-hero {
+                padding: var(--space-lg) var(--space-md);
+            }
+
+            .venue-title {
+                font-size: 2.5rem;
+            }
+
+            .image-gallery {
+                padding: 0 var(--space-md);
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .venue-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+                padding: var(--space-lg) var(--space-md);
+            }
+
+            .content-sidebar {
+                order: -1;
+            }
+
+            .info-card {
+                position: static;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .venue-meta {
+                gap: var(--space-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">CitySaunaFinder</a>
+            <ul class="nav-links">
+                <li><a href="/cities">Cities</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/list">List Your Sauna</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <ul class="breadcrumb-list">
+            <li><a href="/">Home</a></li>
+            <li class="breadcrumb-separator">/</li>
+            <li><a href="/seattle">Seattle</a></li>
+            <li class="breadcrumb-separator">/</li>
+            <li>Olympus Spa</li>
+        </ul>
+    </div>
+
+    <!-- VENUE HERO -->
+    <header class="venue-hero">
+        <div class="venue-category">Korean Spa</div>
+        <h1 class="venue-title">Olympus Spa</h1>
+        <p class="venue-intro">
+            Traditional Korean jjimjilbang offering six thermal rooms, hydrotherapy pools, and authentic healing rituals. A women-only sanctuary for thermal wellness.
+        </p>
+        <div class="venue-meta">
+            <div class="venue-meta-item">Lynnwood, Washington</div>
+            <div class="venue-meta-item">$53 day pass</div>
+            <div class="venue-meta-item">⭐ 4.5/5</div>
+        </div>
+    </header>
+
+    <!-- IMAGE GALLERY -->
+    <section class="image-section">
+        <div class="image-gallery">
+            <div class="gallery-main">🧖</div>
+            <div class="gallery-grid">
+                <div class="gallery-thumb">♨️</div>
+                <div class="gallery-thumb">🌊</div>
+                <div class="gallery-thumb">🔥</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="venue-content">
+        <!-- MAIN CONTENT -->
+        <main class="content-main">
+            <!-- ABOUT -->
+            <article class="content-block">
+                <h2>The Experience</h2>
+                <p>
+                    Olympus Spa brings the authentic Korean jjimjilbang tradition to the Pacific Northwest. Since 2015, this women-only facility has offered a comprehensive thermal wellness experience rooted in centuries-old Korean healing practices.
+                </p>
+                <p>
+                    The spa's centerpiece is its collection of six distinct thermal rooms, each maintained at specific temperatures and featuring different natural materials—jade, clay, Himalayan salt, and more. Together with hydrotherapy pools and a eucalyptus-infused steam room, these spaces create a complete journey through heat, cold, and rest.
+                </p>
+                <p>
+                    What distinguishes Olympus Spa is its attention to the traditional Korean approach: cycling through extreme temperatures, taking time to rest, and allowing the body to heal through thermal contrast. This isn't rushed wellness—it's meant to be savored over hours.
+                </p>
+            </article>
+
+            <!-- AMENITIES -->
+            <article class="content-block">
+                <h2>Facilities</h2>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <div class="amenity-label">Six Thermal Rooms</div>
+                        <div class="amenity-desc">Jade, clay, salt, ice, infrared, and steam</div>
+                    </div>
+                    <div class="amenity-item">
+                        <div class="amenity-label">Hydrotherapy Pools</div>
+                        <div class="amenity-desc">Multiple temperature pools for circulation</div>
+                    </div>
+                    <div class="amenity-item">
+                        <div class="amenity-label">Body Scrub Services</div>
+                        <div class="amenity-desc">Traditional Korean exfoliation treatments</div>
+                    </div>
+                    <div class="amenity-item">
+                        <div class="amenity-label">Korean Café</div>
+                        <div class="amenity-desc">Traditional refreshments and light meals</div>
+                    </div>
+                    <div class="amenity-item">
+                        <div class="amenity-label">Relaxation Lounges</div>
+                        <div class="amenity-desc">Quiet spaces between thermal sessions</div>
+                    </div>
+                    <div class="amenity-item">
+                        <div class="amenity-label">Private Facilities</div>
+                        <div class="amenity-desc">Showers, lockers, and amenities included</div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SAUNA TYPES -->
+            <article class="content-block">
+                <h2>The Thermal Rooms</h2>
+
+                <h3>Jade Room</h3>
+                <p>Medium-heat sauna featuring walls lined with jade stone, maintained at 140°F. In Korean tradition, jade is believed to promote detoxification and energy balance.</p>
+
+                <h3>Clay Room</h3>
+                <p>The most intense space, featuring traditional Korean healing clay at 180°F. The clay balls absorb moisture and heat intensely—not for beginners.</p>
+
+                <h3>Himalayan Salt Room</h3>
+                <p>Moderate heat at 120°F with salt-lined walls. Designed for respiratory benefits through halotherapy and gentle warmth.</p>
+
+                <h3>Ice Room</h3>
+                <p>Cold therapy space maintained at 50°F for contrast therapy. Essential for circulation and closing the thermal cycle.</p>
+
+                <h3>Far Infrared Sauna</h3>
+                <p>Modern infrared technology at comfortable 130°F, offering deep tissue penetration without extreme surface heat.</p>
+
+                <h3>Eucalyptus Steam</h3>
+                <p>High-humidity steam room infused with eucalyptus essential oils, providing respiratory and skin benefits.</p>
+            </article>
+
+            <!-- VISITOR INFO -->
+            <article class="content-block">
+                <h2>What to Know</h2>
+
+                <h3>First Visit</h3>
+                <ul>
+                    <li>Arrive early to maximize your experience—most visitors stay 3-4 hours</li>
+                    <li>Towels and robes provided; bring a swimsuit for pool areas</li>
+                    <li>No phones or cameras in spa areas (lockers provided)</li>
+                    <li>The body scrub service is worth experiencing at least once</li>
+                </ul>
+
+                <h3>Thermal Practice</h3>
+                <ul>
+                    <li>Shower thoroughly before entering any thermal area</li>
+                    <li>Rotate between hot rooms and cold plunge for optimal benefits</li>
+                    <li>Take breaks in relaxation areas—don't rush</li>
+                    <li>Stay hydrated throughout your visit</li>
+                </ul>
+
+                <h3>Etiquette</h3>
+                <ul>
+                    <li>Maintain a quiet, contemplative atmosphere</li>
+                    <li>This is a women-only space—respect the sanctuary</li>
+                    <li>Body scrubs are done in communal area (Korean tradition)</li>
+                    <li>Children under 18 not permitted</li>
+                </ul>
+            </article>
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="content-sidebar">
+            <!-- ESSENTIAL INFO -->
+            <div class="info-card">
+                <h3>Essential Details</h3>
+                <div class="info-row">
+                    <span class="info-label">Hours</span>
+                    <span class="info-value">Daily 9:00 AM – 11:00 PM</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Day Pass</span>
+                    <span class="info-value">$53 (all facilities included)</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Contact</span>
+                    <span class="info-value">
+                        <a href="tel:+14257784777">(425) 778-4777</a>
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Website</span>
+                    <span class="info-value">
+                        <a href="#" target="_blank">Visit site →</a>
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Access</span>
+                    <span class="info-value">Women only, 18+</span>
+                </div>
+
+                <div class="cta-group">
+                    <a href="#" class="btn btn-primary">Get Directions</a>
+                    <a href="#" class="btn btn-secondary">Call Now</a>
+                </div>
+            </div>
+
+            <!-- LOCATION -->
+            <div class="info-card">
+                <h3>Location</h3>
+                <div class="info-row">
+                    <span class="info-value">
+                        2815 196th St SW<br>
+                        Lynnwood, WA 98036
+                    </span>
+                </div>
+                <div class="map-container">Google Maps Embed</div>
+                <div class="info-row" style="margin-top: var(--space-md);">
+                    <span class="info-label">Parking</span>
+                    <span class="info-value">Free on-site parking</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Transit</span>
+                    <span class="info-value">Bus accessible</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

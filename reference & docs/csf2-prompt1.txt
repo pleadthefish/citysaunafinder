@@ -1,0 +1,104 @@
+I need to rebuild citysaunafinder.com from scratch with superior design and authentic voice. This is Phase 1: Product Foundation - getting to feature parity with saunafinder.com but with better UX/UI.
+
+CRITICAL: Before you write ANY code, read these skill files:
+- /mnt/skills/public/docx/SKILL.md (we may need documentation)
+- Any other relevant skills for web development
+
+!these skill files are in development. Future action will critically rely on them. We are just getting a jumpstart right now!
+
+PROJECT CONTEXT:
+- Current site: citysaunafinder.com (basic HTML, hosted on Cloudflare)
+- Competitor benchmark: saunafinder.com (we're copying their data breadth, NOT their design)
+- Goal: Minimal friction, bucolic design, mobile-first
+- Data strategy: Import ALL saunafinder.com venue data now, refine later
+- This is Phase 1 of 3 (Foundation → Traffic → Monetization)
+
+DESIGN PHILOSOPHY:
+- Scandinavian minimalism meets editorial design
+- Think: Kinfolk magazine, Monocle, Finnish sauna heritage
+- Color palette: Cedar wood tones (#D4A574), Steam white (#F5F5F5), Hot stone gray (#3A3A3A)
+- Typography: Editorial hierarchy, NOT SaaS startup
+- NO: Rounded corners everywhere, gradient buttons, corporate purple/blue
+- YES: Generous whitespace, real photography, natural materials aesthetic
+
+TECHNICAL REQUIREMENTS:
+1. Modern React with TypeScript
+2. Mobile-first responsive (75% of searches are mobile)
+3. Fast load times (already using Cloudflare)
+4. Clean component architecture
+5. Simple routing (React Router or Next.js - you decide what's best)
+
+CORE FEATURES (MVP):
+1. Homepage
+   - Hero section with clear value prop
+   - Search bar (city/zip input + sauna type filter)
+   - Featured venues (3-6 cards)
+   - Simple, beautiful design
+
+2. Search/Browse
+   - Filter by: City, Sauna type (Traditional/Finnish/Infrared/Russian Banya/Korean/Steam), Price range
+   - Results as clean cards with: Name, Type, Photo, Address, Brief description
+   - Mobile-optimized list view
+
+3. Venue Detail Pages
+   - All the info: Name, Address, Phone, Website, Hours, Sauna types, Amenities, Pricing
+   - Photo gallery placeholder
+   - Map integration (Google Maps embed)
+   - CTA: "Visit Website" or "Call Now"
+
+4. City Pages
+   - "[City] Saunas" landing pages
+   - Intro text (placeholder for now, we'll write authentic content later)
+   - List of venues in that city
+   - SEO-optimized structure
+
+5. Simple Navigation
+   - Logo/Home
+   - Browse Cities
+   - About (placeholder)
+   - List Your Sauna (placeholder CTA)
+
+DATA ACQUISITION:
+- Scrape/import saunafinder.com venue database (name, address, phone, type, city, basic details)
+- Store in JSON initially (we can move to proper DB later if needed)
+- Aim for 100-200 venues minimum across 10-15 major cities to start
+- Data structure: 
+  {
+    id, name, address, city, state, zip, phone, website, 
+    sauna_types: [], amenities: [], 
+    price_range, description, 
+    coordinates: {lat, lng}
+  }
+
+WHAT I'M PROVIDING:
+[I will add directory setup and any existing files to migrate]
+
+YOUR DELIVERABLES:
+1. Clean project structure
+2. Scraped/formatted venue data (at least 100 venues)
+3. Working search functionality
+4. Responsive, beautiful design
+5. Fast, production-ready code
+
+CONSTRAINTS:
+- Focus on design quality and user experience
+- Keep it simple - no over-engineering
+- Make it LOOK professional and authentic
+- Data enrichment comes later, just get the base data in
+
+Begin by:
+NOTE: assess what the state of the project as is, and critically analyze if this prompt doesn't properly speak to it as it attempts to build something better. 
+1. Proposing the tech stack and project structure
+2. Creating a plan for data acquisition from saunafinder.com
+3. Showing me mockups/wireframes of the key pages before coding
+4. Building iteratively so I can review design decisions
+
+Remember: This needs to look and feel BETTER than saunafinder.com while having similar data coverage. The design is our competitive advantage.
+```
+
+```
+DIRECTORY SETUP:
+- Archive current files to /citysaunafinder-old and rebuild in root
+- keep reference & docs separate from web build, those are for my reference. 
+- preserve necessary files that can be universally applied.
+
