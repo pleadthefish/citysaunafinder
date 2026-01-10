@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://citysaunafinder.pages.dev/sitemap.xml
