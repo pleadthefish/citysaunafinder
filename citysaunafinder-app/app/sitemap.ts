@@ -1,8 +1,10 @@
 import { MetadataRoute } from 'next';
 import venuesData from '@/data/venues.json';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://citysaunafinder.pages.dev';
+  const baseUrl = 'https://citysaunafinder.com';
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
